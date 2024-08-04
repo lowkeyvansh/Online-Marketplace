@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Item</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Add Item</h1>
+        <nav>
+            <a href="/">Home</a>
+        </nav>
+    </header>
+    <main>
+        <section id="add-item">
+            <h2>Add a New Item</h2>
+            <form action="{{ url_for('add') }}" method="POST">
+                <label for="title">Item Title:</label>
+                <input type="text" id="title" name="title" required>
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" rows="4" required></textarea>
+                <label for="price">Price:</label>
+                <input type="number" step="0.01" id="price" name="price" required>
+                <label for="seller">Seller:</label>
+                <input type="text" id="seller" name="seller" required>
+                <button type="submit">Add Item</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Online Marketplace</p>
+    </footer>
+</body>
+</html>
